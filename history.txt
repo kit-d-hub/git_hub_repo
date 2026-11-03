@@ -1,0 +1,103 @@
+  226  git clone git@github.com:kit-d-hub/git_hub_repo.git
+  227  cd git_hub_repo
+  228  git checkout -b feature
+  229  echo "# first README edit" >> README.md
+  230  echo "# second README edit" >> README.md
+  231  nano README.md 
+  232  nano .gitignore 
+  233  git status
+  234  git add README.md .gitignore 
+  235  git commit -m "Initial feature commit"
+  236  git push origin feature 
+  237  git log
+  238  git commit --amend -m "Initial feature commit with AMEND"
+  239  git log
+  240  git checkout main
+  241  git merge feature 
+  242  $ git clone git@github.com:kit-d-hub/git_hub_repo.git
+  243  Cloning into 'git_hub_repo'...
+  244  remote: Enumerating objects: 4, done.
+  245  remote: Counting objects: 100% (4/4), done.
+  246  remote: Compressing objects: 100% (3/3), done.
+  247  remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+  248  Receiving objects: 100% (4/4), done.
+  249  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux
+  250  $ cd git_hub_repo
+  251  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (main)
+  252  $ git checkout -b feature
+  253  Switched to a new branch 'feature'
+  254  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  255  $ echo "# first README edit" >> README.md
+  256  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  257  $ echo "# second README edit" >> README.md
+  258  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  259  $ nano README.md
+  260  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  261  $ nano .gitignore
+  262  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  263  $ git status
+  264  On branch feature
+  265  Changes not staged for commit:
+  266    (use "git add <file>..." to update what will be committed)
+  267    (use "git restore <file>..." to discard changes in working directory)
+  268          modified:   .gitignore
+  269          modified:   README.md
+  270  no changes added to commit (use "git add" and/or "git commit -a")
+  271  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  272  $ git add README.md .gitignore
+  273  warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+  274  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  275  $ git commit -m "Initial feature commit"
+  276  [feature 1255885] Initial feature commit
+  277   2 files changed, 5 insertions(+), 1 deletion(-)
+  278  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  279  $ git push origin feature
+  280  Enumerating objects: 7, done.
+  281  Counting objects: 100% (7/7), done.
+  282  Delta compression using up to 20 threads
+  283  Compressing objects: 100% (3/3), done.
+  284  Writing objects: 100% (4/4), 371 bytes | 371.00 KiB/s, done.
+  285  Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+  286  remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+  287  remote:
+  288  remote: Create a pull request for 'feature' on GitHub by visiting:
+  289  remote:      https://github.com/kit-d-hub/git_hub_repo/pull/new/feature
+  290  remote:
+  291          To github.com:kit-d-hub/git_hub_repo.git
+  292   * [new branch]      feature -> feature
+  293  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  294  $ git log
+  295  commit 1255885224ef454892b53a6eda7fc072facc0124 (HEAD -> feature, origin/feature)
+  296  Author: kit-d-hub <dimkakit@gmail.com>
+  297  Date:   Tue Nov 3 17:20:15 2026 +0100
+  298      Initial feature commit
+  299  commit d32081f6ae1820539321832fd7273b9cb4effc96 (origin/main, origin/HEAD, main)
+  300  Author: kit-d-hub <dimkakit@gmail.com>
+  301  Date:   Tue Nov 3 17:08:55 2026 +0100
+  302      Initial commit
+  303  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  304  $ git commit --amend -m "Initial feature commit with AMEND"
+  305  [feature a1862ff] Initial feature commit with AMEND
+  306   Date: Tue Nov 3 17:20:15 2026 +0100
+  307   2 files changed, 5 insertions(+), 1 deletion(-)
+  308  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  309  $ git log
+  310  commit a1862ff0604f592b4b72857d4459d5ac5fdc5e5d (HEAD -> feature)
+  311  Author: kit-d-hub <dimkakit@gmail.com>
+  312  Date:   Tue Nov 3 17:20:15 2026 +0100
+  313      Initial feature commit with AMEND
+  314  commit d32081f6ae1820539321832fd7273b9cb4effc96 (origin/main, origin/HEAD, main)
+  315  Author: kit-d-hub <dimkakit@gmail.com>
+  316  Date:   Tue Nov 3 17:08:55 2026 +0100
+  317      Initial commit
+  318  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (feature)
+  319  $ git checkout main
+  320  Switched to branch 'main'
+  321  Your branch is up to date with 'origin/main'.
+  322  dimka@OTEZ UCRT64 ~/OneDrive/Документы/Linux/git_hub_repo (main)
+  323  $ git merge feature
+  324  Updating d32081f..a1862ff
+  325  Fast-forward
+  326   .gitignore | 2 ++
+  327   README.md  | 4 +++-
+  328   2 files changed, 5 insertions(+), 1 deletion(-)
